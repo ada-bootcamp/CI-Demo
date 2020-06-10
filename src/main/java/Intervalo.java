@@ -67,7 +67,7 @@ public class Intervalo {
 
 	public int productoStream() {
 		IntStream intervalo = IntStream.range(_min, _max);
-		return intervalo.reduce(0, (a, b) -> a * b);
+		return intervalo.reduce(1, (a, b) -> a * b);
 	}
 	/**
 	 * 
@@ -85,31 +85,7 @@ public class Intervalo {
 
 		return false;
 	} 
-	/**
-	 * 
-	 * @param otro
-	 * @return un nuevo intervalo con la interseccion de 2 intervalos
-	 * Si se tienen los intervalos (1,10),(2,11) devuelve un intervalo (2,11) que osn los numeros en comun
-	 */
 
-	public Optional<Intervalo> interseccion(Intervalo otro) {
-
-		Intervalo aux = new Intervalo(0, 0);
-		if (dentro(otro._min) && dentro(otro._max)) {
-			aux._min = otro._min;
-			aux._max = otro._max;
-
-			return Optional.of(aux);
-		}
-		if (dentro(otro._min) && _max < otro._max) {
-			aux._min = otro._min;
-			aux._max = _max;
-			return Optional.of(aux);
-		}
-
-		return Optional.empty();
-
-	}
 	/**
 	 * 
 	 * @return el valor minimo del intervalo
@@ -125,6 +101,12 @@ public class Intervalo {
 	public int getMax() {
 		return _max;
 	}
-
-
+	/**
+	 * 
+	 * @return la diferencia entre el maximo y el minimo
+	 */
+	public int diferencia() {
+		return _max - _min;
+	}
+	
 }

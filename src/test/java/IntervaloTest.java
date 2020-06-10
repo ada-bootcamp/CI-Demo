@@ -23,7 +23,7 @@ class IntervaloTest {
 			assertEquals(55,_prueba.reduce(0, (x1, x2) -> x1 + x2));
 	}
 	void testSumatoria() {
-		assertEquals(55,_prueba.sumatoria());
+		assertEquals(45,_prueba.sumatoria());
 		
 		
 	}
@@ -39,19 +39,15 @@ class IntervaloTest {
 		
 	}
 	void testSumatoriaStream() {
-		assertEquals(55,_prueba.sumatoriaStream());
+		assertEquals(45,_prueba.sumatoriaStream());
 		
 	}
 	@Test
 	void testProductoStream() {
-		assertEquals(3628800,_prueba.productoStream());
+		assertEquals(362880,_prueba.productoStream());
 		
 	}
-	@Test
-	void testInterseccion() {
-		assertEquals(Optional.empty(),_prueba.interseccion(_prueba1));
-		
-	}
+	
 	@Test
 	void testMin() {
 		assertEquals(1,_prueba.getMin());
@@ -63,6 +59,11 @@ class IntervaloTest {
 		
 	}
 	
+	@Test
+	void testDiferencia() {
+		assertEquals(9,_prueba.diferencia());
+		
+	}
 	
 	
 }
