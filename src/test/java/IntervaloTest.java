@@ -44,7 +44,7 @@ class IntervaloTest {
 	}
 	@Test
 	void testProductoStream() {
-		assertEquals(36288000,_prueba.productoStream());
+		assertEquals(362880,_prueba.productoStream());
 		
 	}
 	
